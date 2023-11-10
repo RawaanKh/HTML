@@ -2,36 +2,43 @@
 <html>
 <head>
   <title>Photo Gallery</title>
-<hr>
-<nav>
-<table cellspacing="5" cellpadding="5">
-<tr>
-<td><a href="homepro1.html">HOME</a></td>
-<td><a href="HTMLpro1.html">HTML Assigments AND Projects </a></td>
-<td><a href="CSSsec.html">CSS Assigments AND Projects</a></td>
-<td><a href="PhotoshopDOC.html">Photoshop Documents </a></td>
-<td><a href="Weppro.html">Wep Applications </a></td>
-</tr></table>
-</nav>
-<hr>
   <style>
     body {
+      font-family: Arial, sans-serif;
       text-align: center;
-      background: radial-gradient(circle, black, white);
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+
+    .photo {
+      display: inline-block;
+      margin: 10px;
+      border: 2px solid #333;
+      padding: 5px;
     }
 
     img {
-      width: 350px;
-      height: 350px;
-      margin: 5px;
+      max-width: 100%;
+      height: auto;
+      display: block;
     }
   </style>
 </head>
 <body>
-  <img src="Photoshop\projweb1.png" alt="Photo 1">
-  <img src="Photoshop\projweb2.png" alt="Photo 2">
-  <img src="Photoshop\projweb3.png" alt="Photo 3">
+  <div class="photo">
+    <img src="\Desktop\css_img.jpg" alt="Photo 1">
+    <p>Photo 1 Description</p>
+  </div>
+
+  <div class="photo">
+    <img src="path_to_your_second_image.jpg" alt="Photo 2">
+    <p>Photo 2 Description</p>
+  </div>
+
+  <div class="photo">
+    <img src="path_to_your_third_image.jpg" alt="Photo 3">
+    <p>Photo 3 Description</p>
+  </div>
 </body>
 </html>
-
  
