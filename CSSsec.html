@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Page</title>
+<hr>
+<nav>
+<table cellspacing="5" cellpadding="5">
+<tr>
+<td><a href="homepro1.html">HOME</a></td>
+<td><a href="HTMLpro1.html">HTML Assigments AND Projects </a></td>
+<td><a href="CSSsec.html">CSS Assigments AND Projects</a></td>
+<td><a href="PhotoshopDOC.html">Photoshop Documents </a></td>
+<td><a href="Weppro.html">Wep Applications </a></td>
+</tr></table>
+</nav>
+<hr>
+  <style>
+    body {
+      background: radial-gradient(circle, black, white);
+    }
+
+    #content {
+      display: none;
+    }
+
+    .button {
+      background-color: #524F81;
+      color: white;
+      font-size: 16px;
+      padding: 10px 20px;
+      border-radius:15px;
+      cursor: pointer;
+    }
+
+    #backButton {
+      background-color: #524F81;
+    }
+
+    #content h1 {
+      font-size: 45px;
+      color:#E63A15;
+
+    }
+
+    #content p {
+      font-size: 16px;
+      color:#524F81
+
+    }
+
+    #content hr {
+      margin: 45px 0;
+    }
+
+    #content ol {
+      font-size: 18px;
+      color:#E63A15;
+
+    }
+
+    #cssCode2,
+    #cssCode3 {
+      display: none;
+      white-space: pre;
+    }
+  </style>
+</head>
+<body>
+  <button class="button" id="button1">Assignment 1</button>
+  <br><br>
+  <button class="button" id="button2">Assignment 2</button>
+  <br><br>
+  <button class="button" id="button3">Project</button>
+  <br><br>
+  <button class="button" id="backButton">Back</button>
+
+  <div id="content">
+    <h1>What is CSS</h1>
+    <p>Cascading Style Sheets (CSS) is a stylesheet language used for describing the presentation of a document written in HTML. It describes how elements are to be displayed on the screen, in print, or in other media.</p>
+
+    <p>It allows for the separation of content and presentation, making it easier to control the layout and design of a web page.</p>
+
+    <hr>
+
+    <ol>
+      <li>Styling text and fonts</li>
+      <li>Setting background colors and images</li>
+      <li>Defining layout and positioning</li>
+      <li>Creating responsive designs</li>
+    </ol>
+  </div>
+
+  <pre id="cssCode2">
+    /* Sample CSS Code for Assignment 2 */
+    .sample {
+      color: red;
+      background-color: yellow;
+      font-size: 20px;
+    }
+  </pre>
+
+  <pre id="cssCode3">
+    /* Sample CSS Code for Project */
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+    }
+  </pre>
+
+  <script>
+    const buttons = document.querySelectorAll(".button");
+    const content = document.getElementById("content");
+    const cssCode2 = document.getElementById("cssCode2");
+    const cssCode3 = document.getElementById("cssCode3");
+    const backButton = document.getElementById("backButton");
+
+    backButton.style.display = "none"; // Initially hide the back button
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", function () {
+        content.style.display = "block";
+        buttons.forEach((btn) => {
+          if (btn !== button) {
+            btn.style.display = "none";
+          }
+        });
+
+        if (button.id === "button2") {
+          cssCode2.style.display = "block";
+          cssCode3.style.display = "none";
+        } else if (button.id === "button3") {
+          cssCode2.style.display = "none";
+          cssCode3.style.display = "block";
+        } else {
+          cssCode2.style.display = "none";
+          cssCode3.style.display = "none";
+        }
+
+        // Show the back button when any button is clicked
+        backButton.style.display = "block";
+      });
+    });
+
+    backButton.addEventListener("click", function () {
+      content.style.display = "none"; // Hide the content
+      backButton.style.display = "none"; // Hide the back button
+
+      buttons.forEach((btn) => {
+        btn.style.display = "block"; // Show all buttons again
+      });
+    });
+  </script>
+</body>
+</html>
+
+
